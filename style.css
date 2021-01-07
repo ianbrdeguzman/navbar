@@ -1,0 +1,130 @@
+:root {
+    --main-color: #00cc00;
+    --bg-color: #272727;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.3rem;
+}
+
+main {
+    position: relative;
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-size: 1.3rem;
+    z-index: 1;
+    position: fixed;
+}
+
+button {
+    font-size: 1.3rem;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    transform: all 1s ease;
+}
+
+.btn-active {
+    transform: rotateZ(90deg);
+}
+
+.navbar-links,
+.navbar-icons {
+    display: none;
+    transition: all .4s ease;
+}
+
+.nav-active {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translateY(80px);
+    background-color: var(--bg-color);
+    width: 100%;
+    text-align: right;
+}
+
+.nav-active ul li {
+    padding: 1rem 2rem;
+    list-style: none;
+}
+
+.nav-active ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+section p {
+    position: relative;
+    top: 5rem;
+    text-align: justify;
+    padding: 2rem
+}
+
+@media (min-width: 900px) {
+    .navbar-links,
+    .navbar-icons {
+        display: block;
+    }
+
+    .nav-active {
+        display: block;
+        width: 50vw;
+        position: relative;
+        top: -80px;
+    }
+
+    .navbar-links ul,
+    .navbar-icons ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navbar-links ul {
+        width: 50vw;
+    }
+
+    .navbar-icons ul {
+        width: 20vw;
+    }
+
+    .navbar-links ul li,
+    .navbar-icons ul li {
+        list-style: none;
+    }
+
+    .navbar-links ul li a,
+    .navbar-icons ul li a {
+        text-decoration: none;
+        color: var(--main-color);
+        transition: all .4s ease;
+    }
+
+    .navbar-links ul li a:hover,
+    .navbar-icons ul li a:hover {
+        display: block;
+        color: lightblue;
+        transform: translateY(5px);
+    }
+
+    button {
+        display: none;
+    }
+}
